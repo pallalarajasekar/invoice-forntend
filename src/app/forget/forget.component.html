@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-5">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <span class="font-weight-light my-4 logo"><i class="fa fa-files-o" aria-hidden="true"></i>
+                                invoice.io</span>
+                        </div>
+                        <div class="col-lg-8 col-md-6 col-sm-12 text-center">
+                            <h3 class="font-weight-light my-4" style="color: #4e73df;">Forgot Password?</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="small mb-3 text-muted">Enter your email address and we will send you a link to reset
+                        your password.</div>
+                    <form [formGroup]="formGroup" (ngSubmit)="forgetPwd()">
+                        <div class="form-group"><label class="small mb-1" for="inputEmailAddress">Email</label><input
+                                class="form-control py-4" formControlName="email" type="email"
+                                aria-describedby="emailHelp" placeholder="Enter email address" /></div>
+                        <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0"><a
+                                class="small" routerLink="/login">Return to login</a>
+                                <button [disabled]="!formGroup.valid" class="btn btn-primary">Reset Password</button></div>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <div class="small"><a routerLink="/createUser">Need an account? Sign up!</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <span>{{pwdResponse}}</span>
+        </div>
+      </div>
+    </div>
+  </div>

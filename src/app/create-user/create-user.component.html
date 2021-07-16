@@ -1,0 +1,86 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-7">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <span class="font-weight-light my-4 logo"><i class="fa fa-files-o" aria-hidden="true"></i>
+                                invoice.io</span>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 text-center">
+                            <h3 class="font-weight-light my-4" style="color: #4e73df;">Create Account</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="formGroup" (ngSubmit)="createAccount()">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-group"><label class="small mb-1" for="inputFirstName">First
+                                        Name</label><input class="form-control py-4" formControlName="firstname" type="text"
+                                        placeholder="Enter first name" /></div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group"><label class="small mb-1" for="inputLastName">Last
+                                        Name</label><input class="form-control py-4" formControlName="lastname" type="text"
+                                        placeholder="Enter last name" /></div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-group"><label class="small mb-1"
+                                        for="inputEmailAddress">Email</label><input class="form-control py-4"
+                                        formControlName="email" type="email" aria-describedby="emailHelp"
+                                        placeholder="Enter email address" /></div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputFirstName">Role</label>
+                                <select class="form-control" formControlName="role"
+                                    placeholder="select job type">
+                                    <option value="Admin">Admin</option>
+                                    <option value="Manager">Manager</option>
+                                    <option value="User">User</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-group"><label class="small mb-1"
+                                        for="inputPassword">Password</label><input class="form-control py-4"
+                                        formControlName="password" type="password" placeholder="Enter password" /></div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group"><label class="small mb-1" for="inputConfirmPassword">Confirm
+                                        Password</label><input class="form-control py-4" formControlName="conformPassword"
+                                        type="password" placeholder="Confirm password" /></div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-4 mb-0">
+                            <button class="btn btn-primary btn-block" [disabled]="!formGroup.valid">Create Account</button></div>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <div class="small"><a routerLink="/login">Have an account? Go to login</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <!-- Modal -->
+ <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+ aria-hidden="true">
+ <div class="modal-dialog" role="document">
+     <div class="modal-content">
+         <div class="modal-header">
+             <h5 class="modal-title" id="exampleModalLabel">User - {{createUser}}</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                 <span aria-hidden="true">&times;</span>
+             </button>
+         </div>
+         <div class="modal-body">
+             <span>{{createUserData}}</span>
+         </div>
+     </div>
+ </div>
